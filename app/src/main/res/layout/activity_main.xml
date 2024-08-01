@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#AE8080"
-    android:padding="15dp"
     android:orientation="vertical"
+    android:paddingHorizontal="50dp"
+    android:paddingVertical="50dp"
     android:fontFamily="sans-serif-condensed"
     tools:context=".MainActivity">
     <LinearLayout
@@ -65,31 +66,41 @@
         >
         <ImageView
             android:padding="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/plus"
             android:onClick="sum"
             />
         <ImageView
             android:padding="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/minus"
             android:onClick="sub"
             />
-        <ImageView
-            android:padding="10dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/multiply"
-        android:onClick="mul"
-        />
-        <ImageView
-            android:padding="10dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/divide"
-        android:onClick="div"
-        />
+
 </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:hapticFeedbackEnabled="true"
+
+        >
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/multiply"
+            android:onClick="mul"
+            />
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:src="@drawable/divide"
+            android:onClick="div"
+            />
+    </LinearLayout>
 </LinearLayout>
