@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             int sum = num1 + num2;
             ((TextView) findViewById(R.id.result)).setText(String.valueOf(sum));
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter valid numbers", Toast.LENGTH_LONG).show();
+            showNullInputToast(R.layout.nullinput_toast);
         }
     }
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             int sub = num1 - num2;
             ((TextView) findViewById(R.id.result)).setText(String.valueOf(sub));
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter valid numbers", Toast.LENGTH_LONG).show();
+            showNullInputToast(R.layout.nullinput_toast);
         }
     }
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             int mul = num1 * num2;
             ((TextView) findViewById(R.id.result)).setText(String.valueOf(mul));
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter valid numbers", Toast.LENGTH_LONG).show();
+            showNullInputToast(R.layout.nullinput_toast);
         }
     }
 
@@ -64,13 +65,31 @@ public class MainActivity extends AppCompatActivity {
             int num1 = Integer.parseInt(((EditText) findViewById(R.id.disp1)).getText().toString());
             int num2 = Integer.parseInt(((EditText) findViewById(R.id.disp2)).getText().toString());
             if (num2 == 0) {
-                Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_LONG).show();
+                showNullInputToast(R.layout.zero_devide);
             } else {
                 float div = (float) num1 / num2;
                 ((TextView) findViewById(R.id.result)).setText(String.valueOf(div));
             }
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter valid numbers", Toast.LENGTH_LONG).show();
+            showDividebyZeroToast(R.layout.nullinput_toast);
         }
+    }
+
+    private void showNullInputToast(int layoutId) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(layoutId, findViewById(R.id.nullinput));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    private void showDividebyZeroToast(int layoutId) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(layoutId, findViewById(R.id.zero_devide));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
     }
 }
