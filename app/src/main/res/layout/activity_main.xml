@@ -55,35 +55,41 @@
             android:text="@string/auto"
             />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:hapticFeedbackEnabled="true"
         >
-        <Button
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/plus"
             android:onClick="sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sum"
             />
-        <Button
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/minus"
             android:onClick="sub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sub"
             />
-        <Button
-            android:onClick="mul"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mul"
-            />
-        <Button
-            android:onClick="div"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/div"
-            />
-    </LinearLayout>
+        <ImageView
+            android:padding="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/multiply"
+        android:onClick="mul"
+        />
+        <ImageView
+            android:padding="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/divide"
+        android:onClick="div"
+        />
+</LinearLayout>
 </LinearLayout>
